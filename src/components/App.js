@@ -1,20 +1,23 @@
-import React, {Component, useState} from "react";
-import Para from './Para';
-import "./../styles/App.css";
+import { useState } from "react";
+import "./styles.css";
 
+export default function App() {
+  const [bool, setBool] = useState(false);
 
-
-
-function App() {
-  
+  const handleDisplay = () => {
+    setBool(true);
+  };
   return (
-    <div id="main">
-      
-      <Para/>
-      
+    <div className="main">
+      <button id="click" onClick={handleDisplay}>
+        Display
+      </button>
+      {bool && (
+        <p id="para">
+          Hello, I've learnt to use the full-stack evaluation tool. This makes
+          me so happy
+        </p>
+      )}
     </div>
   );
 }
-
-
-export default App;
